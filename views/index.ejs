@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <title>Jokes generator</title>
+</head>
+<body>
+    <div class="title" id="title">
+        <h1 id="h1-title" class="div-background">Generate random <br>NSFW <span id="jokes-span">jokes</span> on demand!</h1>
+    </div>
+    <div id="content">
+    <%  if (jokeContent){%>
+        <div id="joke-title" class="div-background">
+        <h1 id="joke-content"><%= jokeContent %></h1>
+        </div>
+    <%}else{%>
+        <div id="joke-wrapper">
+        <div id="joke-setup" class="div-background">
+        <h2><%= jokeSetup %></h2>
+        </div>
+        <div id="joke-delivery">
+        <h1 id="punchline" class="div-background"><%= jokeDelivery %></h1>
+        </div>
+        <script>
+        setTimeout(() => {
+            const box = document.getElementById('punchline');
+            box.style.display = 'block';
+            }, 2000);
+        </script>
+        </div>
+        
+    <%}%>
+    <div id="btn-holder">
+    <button id="btn" onClick="window.location.reload()">New Joke</button>
+    </div>
+</div>
+
+    
+</body>
+</html>
